@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>UserRegister</title>
+<script type="text/javascript">
+	var timeSpan;
+	function updateTime(){
+		if(!timeSpan){
+			timeSpan=document.getElementById('timeSpan');
+		}
+		var date=new Date();
+		timeSpan.innerHTML=date.toLocaleString();
+		setTimeout(function(){
+			updateTime();
+		},1000);
+	}
+</script>
+</head>
+<body onload="updateTime()">
+	<h1>Welcome IP:${ipAddress}</h1>
+	<h3>currentTime:<span id="timeSpan">${currentTime}</span></h3>
+</body>
+</html>
